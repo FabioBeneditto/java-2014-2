@@ -10,11 +10,21 @@ public class ParametrosTest {
 
     @Before
     public void setUp() {
-        this.param = Parametros.getInstance();
+        param = Parametros.getInstance();
     }
 
     @Test
     public void testClassType() {
-        assertTrue(this.param instanceof Parametros);
+        assertTrue(param instanceof Parametros);
+    }
+
+    @Test
+    public void testClassProperties() {
+        assertEquals(param.getJDBCDriver(), null);
+        assertEquals(param.getServer(), null);
+        assertEquals(param.getPort(), null);
+        assertEquals(param.getUsername(), null);
+        assertEquals(param.getPassword(), null);
+        assertEquals(param.getDatabase(), null);
     }
 }
