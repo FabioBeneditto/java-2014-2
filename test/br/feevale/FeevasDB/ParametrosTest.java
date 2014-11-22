@@ -37,32 +37,32 @@ public class ParametrosTest {
 
     @Test
     public void testDriver() {
-        assertEquals(param.getJDBCDriver(), "org.postgresql.Driver");
+        assertEquals("org.postgresql.Driver", param.getJDBCDriver());
     }
 
     @Test
     public void testServer() {
-        assertEquals(param.getServer(), "localhost");
+        assertEquals("localhost", param.getServer());
     }
 
     @Test
     public void testPort() {
-        assertEquals(param.getPort(), "5432");
+        assertEquals("5432", param.getPort());
     }
 
     @Test
     public void testUser() {
-        assertEquals(param.getUsername(), "postgres");
+        assertEquals("postgres", param.getUsername());
     }
 
     @Test
     public void testPassword() {
-        assertEquals(param.getPassword(), "postgres");
+        assertEquals("postgres", param.getPassword());
     }
 
     @Test
     public void testDatabase() {
-        assertEquals(param.getDatabase(), "ProgIII");
+        assertEquals("ProgIII", param.getDatabase());
     }
 
 
