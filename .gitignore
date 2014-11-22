@@ -14,3 +14,6 @@ hs_err_pid*
 # JetBrains IDEs
 .idea
 *.iml
+
+# Arquivo de configuração
+database.xml
