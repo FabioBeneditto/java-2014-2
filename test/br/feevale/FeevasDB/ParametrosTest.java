@@ -17,7 +17,11 @@ public class ParametrosTest {
     @Before
     public void setUp() {
         this.createConfigFile();
-        param = Parametros.getInstance();
+        try {
+            param = Parametros.getInstance();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @Test
@@ -71,7 +75,7 @@ public class ParametrosTest {
      * @return
      */
     private void createConfigFile() {
-        String tmpDir = "database.xml";
+        String tmpDir = "prmsFevasDB.xml";
         try {
             File xml = new File(tmpDir);
             PrintWriter writer = new PrintWriter(xml, "UTF-8");
@@ -81,11 +85,11 @@ public class ParametrosTest {
             writer.println("<properties>");
             writer.println("<comment>Parametros do Fevas DB</comment>");
             writer.println("<entry key=\"driverJDBC\">org.postgresql.Driver</entry>");
-            writer.println("<entry key=\"senha\">postgres</entry>");
             writer.println("<entry key=\"endBanco\">localhost</entry>");
-            writer.println("<entry key=\"nomeDatabase\">ProgIII</entry>");
-            writer.println("<entry key=\"nomeUsuario\">postgres</entry>");
             writer.println("<entry key=\"nroPorta\">5432</entry>");
+            writer.println("<entry key=\"nomeUsuario\">postgres</entry>");
+            writer.println("<entry key=\"senha\">postgres</entry>");
+            writer.println("<entry key=\"nomeDatabase\">ProgIII</entry>");
             writer.println("</properties>");
 
             writer.close();
